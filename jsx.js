@@ -1,17 +1,14 @@
-// Your job is to look through the HTML and find the keys below in the HTML and replace them with
-// their corresponding values. Note that they are all wrapped in curly brackets inside the DOM!!!!
-
-// variables to look for
+let thebody = document.body.innerHTML
 let stuff = {
   topHeader: 'the new top header',
   linkText: 'the new link text',
   finalMessage: 'this is the final message'
 }
 
-// the string of html to look through
-let thebody = document.body.innerHTML
+for (let key in stuff) {
+  thebody = thebody.replace(key, stuff[key])
+}
 
-// YOUR CODE HERE...
+thebody = thebody.replace(/{|}/g, '')
 
-// replacing the existing HTML string with the new HTML string
 document.body.innerHTML = thebody
